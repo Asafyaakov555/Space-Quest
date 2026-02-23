@@ -1,0 +1,89 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!1 &6657754538296537636
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 7230267371525619093}
+  - component: {fileID: 1347649391095015003}
+  m_Layer: 0
+  m_Name: LevelGenarator
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!4 &7230267371525619093
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6657754538296537636}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
+--- !u!114 &1347649391095015003
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 6657754538296537636}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 3cf3966b881fc004db152460d20197e7, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: Assembly-CSharp::Level_Genarator
+  scoreText: {fileID: 0}
+  Win: {fileID: 0}
+  loser: {fileID: 0}
+  floorPreFabs:
+  - {fileID: 7203072283113227182, guid: 055a16cf164117749a925e6c2580cb2d, type: 3}
+  - {fileID: 4458381173296426747, guid: 41058b513a0e43b42afdf95bd0916ebe, type: 3}
+  - {fileID: 395524131959738020, guid: 66e909f3395d33440a3d6f248b34cc7d, type: 3}
+  - {fileID: 1443993754828629236, guid: b7b03c6855ee3294382fcf4dce8ad0c4, type: 3}
+  - {fileID: 1443993754828629236, guid: 67f52f9bde9337149ab9960def37e568, type: 3}
+  - {fileID: 1443993754828629236, guid: 765f0b9f370529f429a0a166ebdb5cb5, type: 3}
+  - {fileID: 1443993754828629236, guid: 67f52f9bde9337149ab9960def37e568, type: 3}
+  - {fileID: 3393445511361853288, guid: abbfc0cd3a3b59e45898af3b5d5519a3, type: 3}
+  - {fileID: 3393445511361853288, guid: abbfc0cd3a3b59e45898af3b5d5519a3, type: 3}
+  - {fileID: 3393445511361853288, guid: abbfc0cd3a3b59e45898af3b5d5519a3, type: 3}
+  - {fileID: 3393445511361853288, guid: abbfc0cd3a3b59e45898af3b5d5519a3, type: 3}
+  - {fileID: 3393445511361853288, guid: abbfc0cd3a3b59e45898af3b5d5519a3, type: 3}
+  - {fileID: 3393445511361853288, guid: abbfc0cd3a3b59e45898af3b5d5519a3, type: 3}
+  Coins:
+  - {fileID: 7224522225135630385, guid: e6d6e52eb9a0c994eacdb2b91bf3b1ba, type: 3}
+  - {fileID: 7224522225135630385, guid: 22b9ca3f0cc6c1d41b8fb56cb53b8343, type: 3}
+  - {fileID: 7224522225135630385, guid: 1f0a3ff583a3fee428808826ba7a9ec2, type: 3}
+  Monster: {fileID: 5168452361343193162, guid: 4cdd09d9b36668d44a00f8f23dcd3e86, type: 3}
+  player: {fileID: 0}
+  GodModeVisual: {fileID: 0}
+  victoryFireworks: {fileID: 7750853977139984562, guid: 6a7b26737f4a19a40b5f385c66dc96a9, type: 3}
+  apple: {fileID: 3559613546432968647, guid: 7aea5de2e7516f940b77ae729ca6e0f4, type: 3}
+  appleParent: {fileID: 0}
+  ArenaParent: {fileID: 0}
+  CoinsParent: {fileID: 0}
+  menu: {fileID: 0}
+  AppleImage: {fileID: 0}
+  instructionsImage: {fileID: 0}
+  startButton: {fileID: 0}
+  pauseMenu: {fileID: 0}
+  playResume: {fileID: 0}
+  skyBoxChoose: {fileID: 0}
+  howToPlayButton: {fileID: 0}
+  settingsScreeN: {fileID: 0}
+  allButtons: {fileID: 0}
+  settingsForPause: {fileID: 0}
+  restartW: {fileID: 0}
+  cin: {fileID: 0}
+  movingWall: {fileID: 2296176581405405839, guid: 21b7a6698232c07408af55e9b628f6cb, type: 3}
