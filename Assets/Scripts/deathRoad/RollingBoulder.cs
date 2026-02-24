@@ -25,11 +25,16 @@ public class RollingBoulder : MonoBehaviour
     [SerializeField] AudioClip shakeSound; 
     [SerializeField] AudioSource audioSource; 
     [SerializeField] [Range(0f, 1f)] float soundVolume = 1f;
+    private const string PlayerTag = "Player";
 
 
     void Start()
     {
-        player = GameObject.FindWithTag("Player");
+        player = GameObject.FindWithTag(PlayerTag);
+        if(player==null)
+        {
+            Debug.Log("did not found player");
+        }
 
     }
    
@@ -37,7 +42,7 @@ public class RollingBoulder : MonoBehaviour
     {
         if(!launching)
         {
-            if(other.CompareTag("Player"))
+            if(other.CompareTag(PlayerTag))
             {
                 
                 StartCoroutine(SpawnBouldersRoutine());
@@ -58,10 +63,12 @@ public class RollingBoulder : MonoBehaviour
             yield return new WaitForSeconds(2f); // if the player not pass create more rocks 
         }
     }
+    public float leftRange=-4.9f;
+    public float RightRange=4.9f;
 
     void SpawnSingleBoulder()
     {
-        float randomX = Random.Range(-4.9f, 4.9f);
+        float randomX = Random.Range(leftRange, RightRange);
         Vector3 spawnPosition = new Vector3(randomX, pos.transform.position.y, pos.transform.position.z);
         GameObject newBoulder = Instantiate(boulder, spawnPosition, Quaternion.identity,brickParent.transform);
         Rigidbody rb = newBoulder.GetComponent<Rigidbody>();

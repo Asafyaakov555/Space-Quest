@@ -9,16 +9,6 @@ public class appleScript : MonoBehaviour
     public AudioClip appleCrunchSound;
     [SerializeField] float soundVolume=1;
     
-    /*
-    void Start()
-    {
-        gameManager = FindAnyObjectByType<GameManager>();
-        if(gameManager==null)
-        Debug.Log("game manager =null!!!");
-        
-    }
-    */
-
 
     const string playerstring = "Player";
     void OnTriggerEnter(Collider other)

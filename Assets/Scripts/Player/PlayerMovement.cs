@@ -45,6 +45,7 @@ public class PlayerMovement : MonoBehaviour
     public float groundDistance = 0.2f;
     public LayerMask groundMask;
     public bool isGrounded = true;
+    public float godModeTime=10f;
     
     
 
@@ -55,13 +56,16 @@ public class PlayerMovement : MonoBehaviour
     {
         rb = GetComponent<Rigidbody>();
         col = GetComponent<CapsuleCollider>();
-        if(SceneManager.GetActiveScene().buildIndex == 0)
+        string sceneName = SceneManager.GetActiveScene().name;
+        if(sceneName=="Level_1")
         {
             deathRoad = false;
+            //Debug.Log("deathroad=false;");
         }
-        if(SceneManager.GetActiveScene().buildIndex == 1)
+        if(sceneName=="deathRoad")
         {
             deathRoad = true;
+           // Debug.Log("deathroad=true;");
         }
     }
     
@@ -226,7 +230,7 @@ public class PlayerMovement : MonoBehaviour
         playerAudio.PlayGodSound();
         rb.isKinematic=true;
         godModeEnable=true;
-        Invoke("disableGodMode",10f);//god mode is 10 seconds
+        Invoke("disableGodMode",godModeTime);//god mode is 10 seconds
         
     }
     void disableGodMode()

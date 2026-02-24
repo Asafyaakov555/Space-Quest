@@ -9,15 +9,6 @@ public class coins : MonoBehaviour
     [SerializeField] private float rotationSpeed = 300f;
     public AudioClip coinCollectSound;
     [SerializeField]  float soundVolume = 2.5f;
-   
-
-    /*
-
-    private void Start()
-    {
-        gameManager = FindFirstObjectByType<GameManager>();
-    }
-    */
 
     private void Update()
     {

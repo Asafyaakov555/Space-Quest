@@ -7,27 +7,20 @@ using UnityEngine.Video;
 public class GameManager_level2 : BaseGameManager
 {
     public static GameManager_level2 Instance;
-
-    
-    //[SerializeField] GameObject player;
-    
     public PlayerMovement playerMovement;
-   // [SerializeField] UIManager uIManager;
+   
     [Header("Texts")]
     [SerializeField] TMP_Text Win;
     [SerializeField] TMP_Text loser;
     
     [Header("Game Objects")]
-
-    
     [SerializeField] ParticleSystem victoryFireworks;
     [SerializeField] VideoPlayer videoPlayer;
     public VideoClip[] movieLibrary; 
     [SerializeField] GameObject restartW;
     
-    //public bool GameStarted=false;
-    //public bool isPaused=false;
     bool win=false;
+    public float delayStartVideo=3f;
     
    
     void Awake()
@@ -38,31 +31,14 @@ public class GameManager_level2 : BaseGameManager
         else
             Destroy(gameObject);
     }
-    /*
-    void Update()
-    {
-        
-        if (Input.GetKeyDown(KeyCode.Escape))
-        {
-            if (isPaused)
-                uIManager.ResumeGame();
-            else
-                uIManager.PauseGame();
-        }
-        
-    }
-    */
+    
     void Start()
     {
         GameStarted = true;
     }
     public override void lose()
     {
-        //AudioListener.pause = true;
-        //uIManager.lose();
         base.lose();
-
-        
     }
     public void Winner()
     {
@@ -79,7 +55,7 @@ public class GameManager_level2 : BaseGameManager
         ParticleSystem newFireworks = Instantiate(victoryFireworks, spawnPos, rot);
         newFireworks.Play();
         win=true;
-        Invoke("startVi",3f);
+        Invoke("startVi",delayStartVideo);
         
         
     }
@@ -88,28 +64,12 @@ public class GameManager_level2 : BaseGameManager
     {
         
         Win.gameObject.SetActive(false);
-        //SkyboxManager sky=FindAnyObjectByType<SkyboxManager>();
         int skyIndex=SkyboxManager.Instance.getSkyIndex();// to match the currect video to the sky
         if (skyIndex >= 0 && skyIndex < movieLibrary.Length)//for every sky different video 
         {
             videoPlayer.clip = movieLibrary[skyIndex];
             videoPlayer.Play();
         }
-        /*
-        if(sky!=null)
-        {
-            int skyIndex=sky.getSkyIndex();
-            if (skyIndex >= 0 && skyIndex < movieLibrary.Length)
-            {
-                videoPlayer.clip = movieLibrary[skyIndex];
-                videoPlayer.Play();
-            }
-
-        }
-        else
-        Debug.Log("null");
-        */
-        
         restartW.SetActive(true);
     }
     

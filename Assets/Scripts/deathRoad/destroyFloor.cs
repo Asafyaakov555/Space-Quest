@@ -9,7 +9,10 @@ public class destroyFloor : MonoBehaviour
     [Header("Audio Settings")]
     [SerializeField] AudioClip shakeSound; 
     [SerializeField] AudioSource audioSource; 
-    [SerializeField] [Range(0f, 1f)] float soundVolume = 1f;
+    [SerializeField] [Range(0f, 1f)] float soundVolume = 1f;//for slider
+    public float minRangeShake=-1f;
+    public float maxRangeShake=1f;
+
     
     
     [SerializeField] float shakeMagnitude = 0.1f;
@@ -39,8 +42,8 @@ public class destroyFloor : MonoBehaviour
         while (elapsed < shakeDuration)
         {
             
-            float x = Random.Range(-1f, 1f) * shakeMagnitude;
-            float y = Random.Range(-1f, 1f) * shakeMagnitude;
+            float x = Random.Range(minRangeShake, maxRangeShake) * shakeMagnitude;
+            float y = Random.Range(minRangeShake, maxRangeShake) * shakeMagnitude;
             transform.position = originalPos + new Vector3(x, y, 0);
             elapsed += Time.deltaTime;
             yield return null;

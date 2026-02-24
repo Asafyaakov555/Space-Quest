@@ -19,7 +19,7 @@ public class KillerWall : MonoBehaviour
         
         startX = transform.position.x;
         speed = Random.Range(minSpeed, maxSpeed);
-        movingRight = (Random.value > 0.5f);
+        movingRight = Random.value > 0.5f;
     }
 
     void Update()

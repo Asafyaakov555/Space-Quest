@@ -18,6 +18,8 @@ public class Enemy : MonoBehaviour
     bool attacking=false;
     bool hit=false;
     [SerializeField] float monsterFallYThreshold = -1f;
+    public float godModeTime=10f;
+    private const string PlayerTag = "Player";
     public void EnemyVICTORY()
     {
         EnemyVictory = true;
@@ -30,7 +32,12 @@ public class Enemy : MonoBehaviour
 
         if (player == null) 
         {
-            player = GameObject.FindWithTag("Player");
+            player = GameObject.FindWithTag(PlayerTag);
+            if(player==null)
+            {
+                Debug.Log("dont find any player");
+            }
+            
         }
         agent = GetComponent<NavMeshAgent>();
         agent.enabled=true;
@@ -104,10 +111,11 @@ public class Enemy : MonoBehaviour
           
         
     }
+    
     public void GodModeEnabled()
     {
         GodMode=true;
-        Invoke("finishGodMode",10f);
+        Invoke("finishGodMode", godModeTime);//god mode time is 10 seconds
 
     }
     

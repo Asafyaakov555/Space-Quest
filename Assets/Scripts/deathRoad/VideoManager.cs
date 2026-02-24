@@ -1,5 +1,5 @@
 using UnityEngine;
-using UnityEngine.Video; // חשוב מאוד כדי לעבוד עם סרטונים
+using UnityEngine.Video; 
 
 public class VideoManger : MonoBehaviour
 {

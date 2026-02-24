@@ -296,7 +296,7 @@ public class Level_Genarator : MonoBehaviour
     {
         Vector3[] directions =
         {
-            new Vector3(10.5f, 0, 0),
+            new Vector3(10.5f, 0, 0),//10.5 is the size of each floor (squere)
             new Vector3(-10.5f, 0, 0),
             new Vector3(0, 0, 10.5f),
             new Vector3(0, 0, -10.5f)

@@ -6,6 +6,10 @@ public class brickDestroy : MonoBehaviour
     private float lifeTimer = 0f;
 
     public AudioClip hitSound;
+    public float rockLife=3f;
+    public float minHeight=-1f;
+    public float minPitch=0.8f;
+    public float maxPitch=1.2f;
 
     void Update()
     {
@@ -13,7 +17,7 @@ public class brickDestroy : MonoBehaviour
         lifeTimer += Time.deltaTime;
 
         
-        if (transform.position.y <= -1 || lifeTimer > 3f) //after three seconds the rock destroy
+        if (transform.position.y <= minHeight || lifeTimer > rockLife) //after three seconds the rock destroy
         {
             Destroy(gameObject); 
         }
@@ -21,7 +25,7 @@ public class brickDestroy : MonoBehaviour
     void OnCollisionEnter(Collision collision)
     {
         
-        float randomPitch = Random.Range(0.8f, 1.2f);
+        float randomPitch = Random.Range(minPitch, maxPitch);
         float volume = collision.relativeVelocity.magnitude / 10f; //rock hit sound
 
         
